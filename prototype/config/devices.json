@@ -1,0 +1,36 @@
+{
+  "说明": "设备连接参数。deviceAdapterBlock 加载此文件。当前全部为 mock 模式。",
+  "laserEzcad": {
+    "mode": "mock",
+    "note": "真实模式需配置 lmc1 桥接。当前 mock 返回模拟状态。",
+    "lmc1": {
+      "dllPath": "D:\\BaiduNetdiskDownload\\测试系统必要软件\\激光打标\\Ezcad2.14.11(20220909)\\Lmc1.dll",
+      "supportDlls": ["LMCMIO.dll", "DataMgr.dll"],
+      "dllArch": "x86",
+      "templateDir": "templates\\ezcad",
+      "bridgeMode": "local-process",
+      "bridgeHost": "127.0.0.1",
+      "bridgePort": 9701,
+      "timeoutMs": 30000
+    }
+  },
+  "printer": {
+    "mode": "mock",
+    "note": "真实模式可选 file / tcp / raw_path。",
+    "tcp": {
+      "host": "192.168.1.50",
+      "port": 9100
+    },
+    "labelWidthMm": 56,
+    "labelHeightMm": 20,
+    "dpi": 203
+  },
+  "scanner": {
+    "mode": "mock",
+    "note": "真实模式可选 hid / serial。mock 模式点击按钮模拟扫码。",
+    "serial": {
+      "port": "COM3",
+      "baudRate": 9600
+    }
+  }
+}

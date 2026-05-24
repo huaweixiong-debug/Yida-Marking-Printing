@@ -1,0 +1,48 @@
+{
+  "说明": "统一变量 → 三类标识映射表。所有变量由 BusinessData 统一产出，各模板只引用不拼接。",
+  "版本": "2.0",
+
+  "variableSources": {
+    "code22":            { "来源": "serialCodeBlock", "说明": "22位统一码: 9短码+1固定码+8日期+4流水" },
+    "customerPartNo":    { "来源": "modelConfigBlock.models[].customerPartNo", "说明": "客户件号" },
+    "supplierCode":      { "来源": "modelConfigBlock.models[].supplierCode", "说明": "供应商代码(固定104107)" },
+    "productionBatchNo": { "来源": "modelConfigBlock.models[].productionBatchNo", "说明": "生产批次号" },
+    "barcodePrefix":     { "来源": "modelConfigBlock.models[].barcodePrefix", "说明": "9位短码" },
+    "fixedCode":         { "来源": "modelConfigBlock.models[].fixedCode", "说明": "1位固定码" },
+    "productionDate":    { "来源": "serialCodeBlock.generateCode()", "说明": "8位日期YYYYMMDD" },
+    "serialNo":          { "来源": "serialCodeBlock.generateCode()", "说明": "4位流水号0001-9999" },
+    "dateSerial":        { "来源": "BusinessData._buildDateSerial()", "说明": "计算字段: productionDate+serialNo" }
+  },
+
+  "templateMapping": {
+    "qrLaser": {
+      "说明": "二维码激光标识 — station1 激光打码",
+      "zones": [
+        { "zone": "二维码(QR)",        "变量": "{code22}",         "内容": "22位码" },
+        { "zone": "右侧第1行",          "变量": "{customerPartNo}", "内容": "客户件号" },
+        { "zone": "右侧第2行",          "变量": "{supplierCode}",   "内容": "供应商代码" },
+        { "zone": "右侧第3行",          "变量": "{dateSerial}",     "内容": "日期+流水" }
+      ]
+    },
+    "paperLabel": {
+      "说明": "纸质标签 — station1 打印机",
+      "zones": [
+        { "zone": "客户Logo",          "变量": "(静态图片)",          "内容": "客户Logo" },
+        { "zone": "标签顶部文字",       "变量": "{customerPartNo}",   "内容": "客户件号: xxx" },
+        { "zone": "条形码",             "变量": "{code22}",          "内容": "22位码" },
+        { "zone": "底部人眼可读数字",   "变量": "{code22}",          "内容": "22位码(与条形码一致)" }
+      ]
+    },
+    "permanentMark": {
+      "说明": "永久性标识文本 — station2 激光打码 (EZCAD/Lmc1.dll)",
+      "zones": [
+        { "zone": "永久性标识文本",     "变量": "{supplierCode} {customerPartNo} {productionBatchNo}", "内容": "ID: 供应商代码 + 客户件号 + 批次号" }
+      ]
+    }
+  },
+
+  "displayOnly": {
+    "说明": "仅用于界面显示，不参与模板变量替换",
+    "fields": ["modelName", "status", "businessMode", "reprintCount", "createdAt"]
+  }
+}

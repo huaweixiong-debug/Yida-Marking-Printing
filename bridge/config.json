@@ -1,0 +1,23 @@
+{
+  "bridge": {
+    "name": "Lmc1Bridge",
+    "version": "0.1.0-stub",
+    "arch": "x86",
+    "description": "32位桥接进程 — 加载 Lmc1.dll 并暴露 HTTP API 供 Node 主程序调用",
+    "listen": {
+      "host": "127.0.0.1",
+      "port": 9701,
+      "protocol": "HTTP POST /api"
+    },
+    "dll": {
+      "path": "D:\\BaiduNetdiskDownload\\测试系统必要软件\\激光打标\\Ezcad2.14.11(20220909)\\Lmc1.dll",
+      "supportDlls": ["LMCMIO.dll", "DataMgr.dll"],
+      "arch": "x86",
+      "note": "路径为当前确认位置，后续部署时改为实际安装路径"
+    },
+    "build": {
+      "recommended": "C# .NET Framework 4.8 控制台程序, 编译目标 x86",
+      "alternative": "C++ Win32 控制台程序 + LoadLibrary"
+    }
+  }
+}

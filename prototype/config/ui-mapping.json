@@ -1,0 +1,55 @@
+{
+  "说明": "界面映射配置。uiMapper 加载此文件，决定哪个功能块输出映射到哪个UI区域。",
+  "regions": {
+    "uiTop": {
+      "label": "顶部信息区",
+      "source": "modelConfigBlock",
+      "fields": ["modelName", "customerPartNo", "supplierCode", "barcodePrefix", "fixedCode"],
+      "visibleOn": ["station1", "station2", "maintenance"]
+    },
+    "uiAction": {
+      "label": "中部操作区",
+      "source": "stationBlock",
+      "note": "工位一由 station1PrintBlock 驱动；工位二由 station2MarkBlock 驱动",
+      "visibleOn": ["station1", "station2"]
+    },
+    "uiPreview": {
+      "label": "模板预览区",
+      "source": "templateConfigBlock",
+      "fields": ["currentTemplateName", "zones"],
+      "visibleOn": ["station1", "station2", "maintenance"]
+    },
+    "uiCode": {
+      "label": "码信息区",
+      "source": "serialCodeBlock",
+      "fields": ["code22", "serialNo", "productionDate", "status"],
+      "visibleOn": ["station1", "station2"]
+    },
+    "uiDevice": {
+      "label": "设备状态区",
+      "source": "deviceAdapterBlock",
+      "fields": ["laserStatus", "printerStatus", "scannerStatus"],
+      "visibleOn": ["station1", "station2"]
+    },
+    "uiTable": {
+      "label": "记录查询区",
+      "source": "traceLogBlock",
+      "fields": ["recentRecords", "alarmList"],
+      "visibleOn": ["station1", "station2", "logs"]
+    }
+  },
+  "permissions": {
+    "operator": {
+      "allowedActions": ["selectModel", "startProduction", "reprint", "scanCode", "f1Position", "f2Mark"],
+      "forbiddenTabs": ["maintenance"]
+    },
+    "engineer": {
+      "allowedActions": ["all"],
+      "forbiddenTabs": []
+    },
+    "admin": {
+      "allowedActions": ["all"],
+      "forbiddenTabs": []
+    }
+  }
+}

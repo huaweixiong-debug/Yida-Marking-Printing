@@ -1,0 +1,33 @@
+{
+  "说明": "产品型号基础参数。modelConfigBlock 加载此文件。",
+  "models": [
+    {
+      "id": "M001",
+      "name": "AZ123456-发动机控制单元",
+      "customerPartNo": "YZ167182100263/1",
+      "supplierCode": "104107",
+      "productionBatchNo": "260312",
+      "barcodePrefix": "123456789",
+      "fixedCode": "A",
+      "qrLaserTemplateId": "TPL-LASER-QR-001",
+      "labelTemplateId": "TPL-LABEL-001",
+      "permanentMarkTemplateId": "TPL-PERMANENT-001",
+      "enabled": true,
+      "remark": "重汽主力型号"
+    },
+    {
+      "id": "M002",
+      "name": "BZ789012-变速箱控制器",
+      "customerPartNo": "YZ198765432/2",
+      "supplierCode": "104107",
+      "productionBatchNo": "260315",
+      "barcodePrefix": "987654321",
+      "fixedCode": "B",
+      "qrLaserTemplateId": "TPL-LASER-QR-001",
+      "labelTemplateId": "TPL-LABEL-001",
+      "permanentMarkTemplateId": "TPL-PERMANENT-001",
+      "enabled": true,
+      "remark": ""
+    }
+  ]
+}

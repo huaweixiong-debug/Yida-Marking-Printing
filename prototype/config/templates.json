@@ -1,0 +1,135 @@
+{
+  "说明": "三类标识模板。变量: {code22} 22位码, {customerPartNo} 客户件号, {supplierCode} 供应商代码, {barcodePrefix} 9位短码, {fixedCode} 1位固定码, {productionDate} 8位日期, {dateSerial} 8位日期+4位流水, {serialNo} 4位流水号, {productionBatchNo} 生产批次号",
+
+  "qrLaserTemplates": [
+    {
+      "id": "TPL-LASER-QR-001",
+      "name": "标准二维码激光标识",
+      "说明": "二维码标识 = 左侧二维码(22位码) + 右侧三行文字。由 station1 激光打码执行。",
+      "ezcadTemplatePath": "templates/ezcad/qr_mark_v1.ezd",
+      "variables": ["code22", "customerPartNo", "supplierCode", "dateSerial"],
+      "zones": [
+        {
+          "zoneId": "zone-qr-left",
+          "label": "二维码 (22位码)",
+          "type": "qrcode",
+          "xMm": 5,
+          "yMm": 5,
+          "widthMm": 25,
+          "heightMm": 25,
+          "variableMapping": "{code22}",
+          "note": "左侧主内容=固定22位数: 9短码+1固定码+8日期+4流水"
+        },
+        {
+          "zoneId": "zone-qr-text-1",
+          "label": "客户件号",
+          "type": "text",
+          "xMm": 35,
+          "yMm": 6,
+          "fontSize": 14,
+          "variableMapping": "{customerPartNo}",
+          "note": "右侧第一行"
+        },
+        {
+          "zoneId": "zone-qr-text-2",
+          "label": "供应商代码",
+          "type": "text",
+          "xMm": 35,
+          "yMm": 14,
+          "fontSize": 12,
+          "variableMapping": "{supplierCode}",
+          "note": "右侧第二行(固定104107)"
+        },
+        {
+          "zoneId": "zone-qr-text-3",
+          "label": "日期+流水号",
+          "type": "text",
+          "xMm": 35,
+          "yMm": 20,
+          "fontSize": 12,
+          "variableMapping": "{dateSerial}",
+          "note": "右侧第三行: 8位日期+4位流水"
+        }
+      ]
+    }
+  ],
+
+  "labelTemplates": [
+    {
+      "id": "TPL-LABEL-001",
+      "name": "标准纸质标签 56x20mm",
+      "说明": "纸质标签 = Logo + 客户件号(上) + 条形码(中) + 22位数字(下)。条形码内容=22位码。由 station1 打印机执行。",
+      "widthMm": 56,
+      "heightMm": 20,
+      "dpi": 203,
+      "zones": [
+        {
+          "zoneId": "zone-label-logo",
+          "label": "客户Logo",
+          "type": "image",
+          "xMm": 3,
+          "yMm": 2,
+          "widthMm": 12,
+          "heightMm": 12,
+          "variableMapping": "{logo}",
+          "note": "客户Logo图片"
+        },
+        {
+          "zoneId": "zone-label-partno",
+          "label": "客户件号",
+          "type": "text",
+          "xMm": 18,
+          "yMm": 3,
+          "fontSize": 10,
+          "variableMapping": "客户件号: {customerPartNo}",
+          "note": "标签顶部"
+        },
+        {
+          "zoneId": "zone-label-barcode",
+          "label": "条形码 (22位码)",
+          "type": "barcode128",
+          "xMm": 3,
+          "yMm": 16,
+          "widthMm": 50,
+          "heightMm": 6,
+          "variableMapping": "{code22}",
+          "note": "条形码内容=固定22位数(与二维码同源)"
+        },
+        {
+          "zoneId": "zone-label-digits",
+          "label": "22位数字 (人眼可读)",
+          "type": "text",
+          "xMm": 3,
+          "yMm": 24,
+          "fontSize": 9,
+          "variableMapping": "{code22}",
+          "note": "底部数字必须与条形码内容完全一致"
+        }
+      ]
+    }
+  ],
+
+  "permanentMarkTemplates": [
+    {
+      "id": "TPL-PERMANENT-001",
+      "name": "标准永久性标识文本",
+      "说明": "永久性标识 = 激光文本(非二维码/非条形码)。内容=供应商代码+客户件号+生产批次号。由 station2 激光打码执行,通过 Lmc1.dll 桥接驱动（32位 x86）。",
+      "ezcadTemplatePath": "templates/ezcad/permanent_text_v1.ezd",
+      "variables": ["supplierCode", "customerPartNo", "productionBatchNo"],
+      "contentFormat": "ID: {supplierCode} {customerPartNo} {productionBatchNo}",
+      "contentExample": "ID: 104107 YZ167182100263/1 260312",
+      "zones": [
+        {
+          "zoneId": "zone-permanent-text",
+          "label": "永久性标识文本",
+          "type": "text",
+          "xMm": 10,
+          "yMm": 10,
+          "fontSize": 12,
+          "variableMapping": "ID: {supplierCode} {customerPartNo} {productionBatchNo}",
+          "note": "激光直接打在产品本体上的文本标识"
+        }
+      ]
+    }
+  ]
+}

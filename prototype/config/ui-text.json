@@ -1,0 +1,69 @@
+{
+  "说明": "界面文案配置。所有按钮、标题、提示文案集中管理，不散落在 JS 中。",
+
+  "tabLabels": {
+    "station1": "工位一 · 激光打码+标签",
+    "station2": "工位二 · 扫码核验",
+    "maintenance": "维护配置",
+    "logs": "日志与追溯"
+  },
+
+  "station1": {
+    "sectionDebug": "调试模式（Lmc1.dll 红光定位）",
+    "sectionAuto": "自动模式 — 选择业务",
+    "btnStartDebug": "开始调试",
+    "btnContinueDebug": "继续调试",
+    "btnEndDebug": "调试完毕",
+    "btnExecute": "生成码并执行",
+    "btnReprint": "重新执行",
+    "logDebugEnter": "进入调试模式，Lmc1.dll 红光定位中…",
+    "logDebugContinue": "继续调试，刷新红光定位…",
+    "logDebugEnd": "调试完毕，已进入自动模式。请选择业务后生成码并执行。",
+    "logCodeGenerated": "22位码已生成: {code22}",
+    "logExecuteDone": "执行完成 [{mode}]: 码 {code22}",
+    "logReprintDone": "重新执行: {code22}"
+  },
+
+  "station2": {
+    "sectionDebug": "调试模式（Lmc1.dll 红光定位）",
+    "sectionPermanentPreview": "永久性标识内容预览",
+    "sectionAuto": "自动模式 — 扫码触发打码",
+    "btnStartDebug": "开始调试",
+    "btnContinueDebug": "继续调试",
+    "btnEndDebug": "调试完毕",
+    "btnSimScan": "模拟扫码",
+    "btnReset": "完成/重置",
+    "logDebugEnter": "进入调试模式，Lmc1.dll 红光定位中…",
+    "logDebugEnd": "调试完毕，已进入自动模式。请扫码以识别型号。",
+    "logReset": "已重置，准备下一件。"
+  },
+
+  "zplTemplate": {
+    "default": "^XA^FO14,18^BQN,2,3^FDLA,{code22}^FS^XZ",
+    "说明": "ZPL 模板。{code22} 会被替换为实际 22 位码。后续按实际标签尺寸调整坐标和字体。"
+  },
+
+  "deviceStatus": {
+    "laserLabel": "激光打码",
+    "printerLabel": "标签打印机",
+    "scannerLabel": "扫码枪",
+    "modeMock": "mock 模式",
+    "modeReal": "真实模式"
+  },
+
+  "footer": {
+    "line1": "激光: mock | 打印机: mock | 扫码枪: mock",
+    "line2": "laserEzcadAdapter 已预留 32位 Lmc1.dll 桥接接口",
+    "line3": "数据无持久化（刷新即清空）"
+  },
+
+  "sectionLabels": {
+    "uiTop": "顶部信息区 ← modelConfigBlock",
+    "uiAction": "中部操作区 ← stationBlock",
+    "uiPreview": "模板预览区 ← templateConfigBlock",
+    "uiCode": "码信息区 ← serialCodeBlock",
+    "uiDevice": "设备状态区 ← deviceAdapterBlock",
+    "uiTable": "最近生产记录 ← traceLogBlock",
+    "uiAlarms": "报警信息 ← traceLogBlock"
+  }
+}

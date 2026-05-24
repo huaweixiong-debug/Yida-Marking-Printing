@@ -1,0 +1,31 @@
+{
+  "app_name": "重汽三码合一程序",
+  "database_path": "data/sanma.db",
+  "operator_default": "OP001",
+  "production": {
+    "serial_start": 1,
+    "serial_max": 9999,
+    "serial_scope": "model_date",
+    "allow_reprint_current_only": true
+  },
+  "printer": {
+    "mode": "file",
+    "output_dir": "output/labels",
+    "tcp_host": "192.168.1.50",
+    "tcp_port": 9100,
+    "raw_path": "",
+    "dpi": 203,
+    "label_width_mm": 56,
+    "label_height_mm": 20
+  },
+  "laser": {
+    "mode": "file",
+    "output_dir": "output/laser",
+    "tcp_host": "192.168.1.60",
+    "tcp_port": 5000,
+    "raw_command_template": "{code22}"
+  },
+  "scanner": {
+    "required_for_verify": false
+  }
+}

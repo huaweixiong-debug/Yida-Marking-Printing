@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>重汽三码合一程序 — 预览原型</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<!-- ===== 顶部标题栏 ===== -->
+<header class="app-header">
+  <div>
+    <h1>重汽三码合一程序</h1>
+    <span class="subtitle">预览原型 — 全模块 Mock</span>
+  </div>
+  <span style="font-size:12px;color:#94a3b8;">v0.1-prototype</span>
+</header>
+
+<!-- ===== 型号选择器 ===== -->
+<div class="model-selector">
+  <label for="modelSelect">当前型号:</label>
+  <select id="modelSelect"></select>
+  <span style="font-size:11px;color:#94a3b8;margin-left:8px;">
+    配置来源: config/models.json
+  </span>
+</div>
+
+<!-- ===== Tab 导航 ===== -->
+<nav class="tab-bar">
+  <button class="tab-btn active" data-tab="station1">工位一 · 激光打码+标签</button>
+  <button class="tab-btn" data-tab="station2">工位二 · 扫码核验</button>
+  <button class="tab-btn" data-tab="maintenance">维护配置</button>
+  <button class="tab-btn" data-tab="logs">日志与追溯</button>
+</nav>
+
+<!-- ===== 主布局 ===== -->
+<div class="main-grid">
+
+  <!-- 顶部信息区 — modelConfigBlock -->
+  <section class="region-top" id="uiTop">
+    <div class="region-title">顶部信息区 ← modelConfigBlock</div>
+    <span class="empty-hint">加载中…</span>
+  </section>
+
+  <!-- 中部操作区 — station1PrintBlock / station2MarkBlock -->
+  <section class="region-action" id="uiAction">
+    <div class="region-title">中部操作区 ← stationBlock</div>
+    <span class="empty-hint">加载中…</span>
+  </section>
+
+  <!-- 模板预览区 — templateConfigBlock -->
+  <section class="region-preview" id="uiPreview">
+    <div class="region-title">模板预览区 ← templateConfigBlock</div>
+    <span class="empty-hint">加载中…</span>
+  </section>
+
+  <!-- 码信息区 — serialCodeBlock -->
+  <section class="region-code" id="uiCode">
+    <div class="region-title">码信息区 ← serialCodeBlock</div>
+    <span class="empty-hint">加载中…</span>
+  </section>
+
+  <!-- 设备状态区 — deviceAdapterBlock -->
+  <section class="region-device" id="uiDevice">
+    <div class="region-title">设备状态区 ← deviceAdapterBlock</div>
+    <span class="empty-hint">加载中…</span>
+  </section>
+
+  <!-- 底部：记录 & 报警 — traceLogBlock -->
+  <div class="region-bottom">
+    <section class="region-table" id="uiTable">
+      <div class="region-title">最近生产记录 ← traceLogBlock</div>
+      <span class="empty-hint">暂无记录</span>
+    </section>
+    <section class="region-alarms" id="alarmList">
+      <div class="region-title">报警信息 ← traceLogBlock</div>
+      <span class="empty-hint">无报警</span>
+    </section>
+  </div>
+
+</div>
+
+<!-- ===== 底部状态栏 ===== -->
+<footer class="app-footer">
+  <span>激光: mock | 打印机: mock | 扫码枪: mock</span>
+  <span>laserEzcadAdapter 已预留 32位 Lmc1.dll 接口</span>
+  <span>数据无持久化（刷新即清空）</span>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

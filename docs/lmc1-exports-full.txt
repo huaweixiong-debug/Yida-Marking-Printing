@@ -1,0 +1,295 @@
+============================================================
+PE HEADER
+============================================================
+  Architecture: x86 (32-bit)
+  Sections: 5
+  Characteristics: 0x210e
+  Timestamp: 1558010257
+
+============================================================
+EXPORT TABLE
+============================================================
+  DLL Name: Lmc1.dll
+  Total exported symbols: 232
+
+  ord:   1  addr:0x323a5     ??0CLaserParamExtOutput@@QAE@XZ
+  ord:   2  addr:0x3d40      ??0CLmcDev@@QAE@ABV0@@Z
+  ord:   3  addr:0x45aaa     ??0CLmcDev@@QAE@XZ
+  ord:   4  addr:0x2ddd0     ??0CQComByte@@QAE@ABV0@@Z
+  ord:   5  addr:0x2e489     ??0CQComByte@@QAE@XZ
+  ord:   6  addr:0x323e5     ??1CLaserParamExtOutput@@QAE@XZ
+  ord:   7  addr:0x45f1b     ??1CLmcDev@@QAE@XZ
+  ord:   8  addr:0x2dd90     ??1CQComByte@@UAE@XZ
+  ord:   9  addr:0x3a40      ??4CLaserParamExtOutput@@QAEAAV0@ABV0@@Z
+  ord:  10  addr:0x4650      ??4CLmcDev@@QAEAAV0@ABV0@@Z
+  ord:  11  addr:0x2df10     ??4CQComByte@@QAEAAV0@ABV0@@Z
+  ord:  12  addr:0x728a8     ??_7CLmcDev@@6B@
+  ord:  13  addr:0x74ba4     ??_7CQComByte@@6B@
+  ord:  14  addr:0x51206     ?AddCmd@CLmcDev@@QAEHGGGGGG@Z
+  ord:  15  addr:0x2ebe0     ?Answer@CQComByte@@QAEXPAEH@Z
+  ord:  16  addr:0x5683d     ?AppendNullCmd@CLmcDev@@QAEHXZ
+  ord:  17  addr:0x565d6     ?AppendNullCmdAndRun@CLmcDev@@QAEHXZ
+  ord:  18  addr:0x2e8c5     ?Ask@CQComByte@@QAEHPAEKH@Z
+  ord:  19  addr:0x2e940     ?AskAnswerStop@CQComByte@@QAEHPAEKE@Z
+  ord:  20  addr:0x2e9be     ?AskStr@CQComByte@@QAEHVCString@@H@Z
+  ord:  21  addr:0x4b3c8     ?AxisGotoOrigin@CLmcDev@@QAEHHH@Z
+  ord:  22  addr:0x4c772     ?AxisMoveTo@CLmcDev@@QAEHHNHH@Z
+  ord:  23  addr:0x4c5e8     ?AxisMoveToDlg@CLmcDev@@QAEHHNHH@Z
+  ord:  24  addr:0x4c808     ?AxisMoveToGoal@CLmcDev@@QAEHHHHH@Z
+  ord:  25  addr:0x4ddca     ?CalcJumpTime@CLmcDev@@QAENNAAG@Z
+  ord:  26  addr:0x5acf2     ?ChangeEnt@CLmcDev@@QAEHPAVCEntity@@@Z
+  ord:  27  addr:0x56deb     ?CheckDevelopNumber@CLmcDev@@QAEHXZ
+  ord:  28  addr:0x55250     ?CheckLaserState@CLmcDev@@QAEHH@Z
+  ord:  29  addr:0x323f8     ?Clear@CLaserParamExtOutput@@QAEXXZ
+  ord:  30  addr:0x5701e     ?ClearLockInputPort@CLmcDev@@QAEXXZ
+  ord:  31  addr:0x635fc     ?Co2QuickPulseModeLine@CLmcDev@@QAEHAAV?$CArray@VPt2d@@AAV1@@@HNN@Z
+  ord:  32  addr:0x2e63b     ?Connect@CQComByte@@QAEHXZ
+  ord:  33  addr:0x4d7bf     ?D2P@CLmcDev@@IBEXABHABNAAG@Z
+  ord:  34  addr:0x4da40     ?D2P@CLmcDev@@QBEXABN0AAG1@Z
+  ord:  35  addr:0x4d996     ?D2P_X@CLmcDev@@QBEHABN@Z
+  ord:  36  addr:0x4d9c6     ?D2P_Y@CLmcDev@@QBEHABN@Z
+  ord:  37  addr:0x2e563     ?Destroy@CQComByte@@QAEXXZ
+  ord:  38  addr:0x55f7d     ?DestroyExcelCor@CLmcDev@@QAEXXZ
+  ord:  39  addr:0x2e84e     ?DisConnect@CQComByte@@QAEXXZ
+  ord:  40  addr:0x56e78     ?EleExecute@CLmcDev@@QAEHPADPAXK1KAAK@Z
+  ord:  41  addr:0x2e5fc     ?EmptyAnswerBuf@CQComByte@@QAEXXZ
+  ord:  42  addr:0x56fb4     ?EnableLockInputPort@CLmcDev@@QAEXH@Z
+  ord:  43  addr:0x56449     ?ExcelCor@CLmcDev@@QAEXAAN0@Z
+  ord:  44  addr:0x512f8     ?ExeCurCmd@CLmcDev@@QAEHH@Z
+  ord:  45  addr:0x536ab     ?ExecMarkCmdFile@CLmcDev@@QAEHH@Z
+  ord:  46  addr:0x4cdca     ?ExtAxisGetCurPos@CLmcDev@@QAEHH@Z
+  ord:  47  addr:0x4bc9e     ?ExtAxisGotoOrigin@CLmcDev@@QAEHH@Z
+  ord:  48  addr:0x4ca97     ?ExtAxisMoveToPos@CLmcDev@@QAEHHHNNN@Z
+  ord:  49  addr:0x52481     ?FinishMark@CLmcDev@@UAEHXZ
+  ord:  50  addr:0x2ed27     ?GetAnswer@CQComByte@@QAEXPAEHAAH@Z
+  ord:  51  addr:0x3d20      ?GetAxisCoorInt@CLmcDev@@QAEHABH@Z
+  ord:  52  addr:0x32b55     ?GetBoardHardInfoString@CLmcDev@@QAE?AVCString@@XZ
+  ord:  53  addr:0x3b40      ?GetCardNo@CLmcDev@@QBEHXZ
+  ord:  54  addr:0x3b60      ?GetCardSN@CLmcDev@@QBEHXZ
+  ord:  55  addr:0x46011     ?GetCardState@CLmcDev@@QAEHAAG@Z
+  ord:  56  addr:0x3ce0      ?GetCoor@CLmcDev@@QAENABH@Z
+  ord:  57  addr:0x3c00      ?GetCurCmdNum@CLmcDev@@QAEHXZ
+  ord:  58  addr:0x3be0      ?GetCurOutPortData@CLmcDev@@QAEGXZ
+  ord:  59  addr:0x4d3ad     ?GetCurPosition@CLmcDev@@QAEHAAN0@Z
+  ord:  60  addr:0x3ac0      ?GetDevState@CLmcDev@@QAEGXZ
+  ord:  61  addr:0x4d458     ?GetDistMap@CLmcDev@@IBENABHABG@Z
+  ord:  62  addr:0x563b2     ?GetExcelCorPt@CLmcDev@@QAE?AVPt2d@@V2@@Z
+  ord:  63  addr:0x57c6e     ?GetFiberStateCode@CLmcDev@@QAEHXZ
+  ord:  64  addr:0x4dbe2     ?GetFieldOffset@CLmcDev@@QAEXAAN0@Z
+  ord:  65  addr:0x57408     ?GetFlyPulseCount55@CLmcDev@@QAEHHAAG@Z
+  ord:  66  addr:0x53446     ?GetFlySpeed@CLmcDev@@QAEHNAAN@Z
+  ord:  67  addr:0x56579     ?GetFlyWaitCount@CLmcDev@@QAEHHAAH@Z
+  ord:  68  addr:0x4cfd2     ?GetHardwareVer@CLmcDev@@QAEHAAG0@Z
+  ord:  69  addr:0x461d8     ?GetIOBoardType@CLmcDev@@QAEHXZ
+  ord:  70  addr:0x3b00      ?GetLaserStateErrCode@CLmcDev@@QAEHXZ
+  ord:  71  addr:0x56c7f     ?GetLmcBoardNo@CLmcDev@@QAEHAAG0@Z
+  ord:  72  addr:0x57061     ?GetLockInputPort@CLmcDev@@QAEHAAG@Z
+  ord:  73  addr:0x56d29     ?GetMarkCount@CLmcDev@@QAEHHAAH@Z
+  ord:  74  addr:0x57101     ?GetMarkTime@CLmcDev@@QAEHAAH000@Z
+  ord:  75  addr:0x3cc0      ?GetMaxCurrent@CLmcDev@@QAENXZ
+  ord:  76  addr:0x3c70      ?GetMaxPowerRatio@CLmcDev@@QAENXZ
+  ord:  77  addr:0x4d55a     ?GetPluseMap@CLmcDev@@IBEGABHABN@Z
+  ord:  78  addr:0x4623d     ?GetRealMap@CLmcDev@@QAENNNQAN@Z
+  ord:  79  addr:0x4d091     ?GetState@CLmcDev@@QAEHAAG@Z
+  ord:  80  addr:0x3ae0      ?GetStopSignal@CLmcDev@@QAEGXZ
+  ord:  81  addr:0x5732f     ?GetUserData@CLmcDev@@QAEHAAG0@Z
+  ord:  82  addr:0x4dcef     ?Goto@CLmcDev@@QAEHNN@Z
+  ord:  83  addr:0x4b5a6     ?GotoOriginKernal@CLmcDev@@IAEHHH@Z
+  ord:  84  addr:0x57680     ?IPGGetConfigExtend@CLmcDev@@QAEHHAAG0@Z
+  ord:  85  addr:0x57876     ?IPGGetPrepump@CLmcDev@@QAEHAAH@Z
+  ord:  86  addr:0x56f02     ?IPGGetPulseWidth@CLmcDev@@QAEHAAH@Z
+  ord:  87  addr:0x5792e     ?IPGGetPulseWidthMaxIndex@CLmcDev@@QAEHAAH@Z
+  ord:  88  addr:0x577b5     ?IPGGetPulseWidthPs@CLmcDev@@QAEHAAH@Z
+  ord:  89  addr:0x57486     ?IPGSetConfigExtend@CLmcDev@@QAEHHH@Z
+  ord:  90  addr:0x57816     ?IPGSetPrepump@CLmcDev@@QAEHH@Z
+  ord:  91  addr:0x56ead     ?IPGSetPulseWidth@CLmcDev@@QAEHH@Z
+  ord:  92  addr:0x57946     ?IPGSetPulseWidthIndex@CLmcDev@@QAEHH@Z
+  ord:  93  addr:0x57755     ?IPGSetPulseWidthPs@CLmcDev@@QAEHH@Z
+  ord:  94  addr:0x4b01b     ?IPG_CloseMO@CLmcDev@@QAEXXZ
+  ord:  95  addr:0x4b285     ?IPG_GetStateMO_AP@CLmcDev@@QAEHAAG@Z
+  ord:  96  addr:0x4afd5     ?IPG_OpenMO@CLmcDev@@QAEXXZ
+  ord:  97  addr:0x55c69     ?InitCfgExcelCor@CLmcDev@@QAEHPAULmcCfg@@@Z
+  ord:  98  addr:0x32b30     ?InitGetBoardHardInfo@CLmcDev@@QAEHXZ
+  ord:  99  addr:0x47b08     ?InitLmc@CLmcDev@@QAEHHH@Z
+  ord: 100  addr:0x58651     ?InitZData@CLmcDev@@QAEHPANPAKHKH@Z
+  ord: 101  addr:0x58d8d     ?InitZDataEx@CLmcDev@@QAEHPANPAKHH@Z
+  ord: 102  addr:0x2ea67     ?IsAnswered@CQComByte@@QAEHXZ
+  ord: 103  addr:0x55786     ?IsAxisGoHome@CLmcDev@@QAEHH@Z
+  ord: 104  addr:0x571e9     ?IsAxisInOrigin@CLmcDev@@QAEHH@Z
+  ord: 105  addr:0x32b11     ?IsBoardSupportFun@CLmcDev@@QAEHH@Z
+  ord: 106  addr:0x2ddb0     ?IsConnect@CQComByte@@QAEHXZ
+  ord: 107  addr:0x5a80a     ?IsEntWillChange@CLmcDev@@QAEHPAVCEntity@@@Z
+  ord: 108  addr:0x51592     ?IsEsc@CLmcDev@@UAEHXZ
+  ord: 109  addr:0x57204     ?IsExtAxisInOrigin@CLmcDev@@QAEHHH@Z
+  ord: 110  addr:0x4afc8     ?IsMustDestroyDog@CLmcDev@@QAEHXZ
+  ord: 111  addr:0x556e0     ?IsSleepTimeCloseLaser@CLmcDev@@QAEXXZ
+  ord: 112  addr:0x3c20      ?IsStartExeList@CLmcDev@@QAEHXZ
+  ord: 113  addr:0x46175     ?IsValidDev@CLmcDev@@QAEHXZ
+  ord: 114  addr:0x64214     ?LaserLeakHandle@CLmcDev@@QAEHH@Z
+  ord: 115  addr:0x55729     ?LaserSignalOn@CLmcDev@@QAEXH@Z
+  ord: 116  addr:0x3b80      ?MM2P@CLmcDev@@QBEHABHABN@Z
+  ord: 117  addr:0x65e23     ?MarkBarcodePointMode@CLmcDev@@QAEHPAVCEntity@@HNNPAVCMatrix2d@@@Z
+  ord: 118  addr:0x5d287     ?MarkEnt@CLmcDev@@QAEHPAVCEntity@@HNNPAVCMatrix2d@@@Z
+  ord: 119  addr:0x5b81b     ?MarkEntArray@CLmcDev@@QAEHPAVCEntity@@HNNPAVCMatrix2d@@@Z
+  ord: 120  addr:0x547b5     ?MarkLineArray@CLmcDev@@QAEHAAV?$CArray@VPt2d@@AAV1@@@NN@Z
+  ord: 121  addr:0x5bde3     ?MarkWobble@CLmcDev@@QAEHAAV?$CArray@VPt2d@@AAV1@@@NNNN@Z
+  ord: 122  addr:0x573a6     ?NewCmd@CLmcDev@@QAEHPAGHAAG1@Z
+  ord: 123  addr:0x64f5f     ?New_MIO_AxisGoOrigin@CLmcDev@@QAE?AUtagResult@@EGHPAVCWnd@@@Z
+  ord: 124  addr:0x63926     ?New_MIO_MoveAxisTo@CLmcDev@@QAE?AUtagResult@@EGKPAVCWnd@@@Z
+  ord: 125  addr:0x4d8ed     ?P2D@CLmcDev@@IBEXABHABGAAN@Z
+  ord: 126  addr:0x4da81     ?P2D@CLmcDev@@QBEXABG0AAN1@Z
+  ord: 127  addr:0x4d9f6     ?P2D_X@CLmcDev@@QBENABH@Z
+  ord: 128  addr:0x4da1b     ?P2D_Y@CLmcDev@@QBENABH@Z
+  ord: 129  addr:0x3bb0      ?P2MM@CLmcDev@@QBENABH0@Z
+  ord: 130  addr:0x5287a     ?QS_Digtal_Output@CLmcDev@@QAEHGG@Z
+  ord: 131  addr:0x2e2c8     ?ReadCommBlock@CQComByte@@QAEHPAEH@Z
+  ord: 132  addr:0x47025     ?ReadCorFile@CLmcDev@@QAEHVCString@@@Z
+  ord: 133  addr:0x5118a     ?ReadPort@CLmcDev@@QAEHAAG@Z
+  ord: 134  addr:0x51d4f     ?ReadyMark@CLmcDev@@UAEHH@Z
+  ord: 135  addr:0x4608d     ?Reset@CLmcDev@@QAEHXZ
+  ord: 136  addr:0x523df     ?Run@CLmcDev@@UAEHXZ
+  ord: 137  addr:0x4b124     ?SPI_CloseGlobal@CLmcDev@@QAEXXZ
+  ord: 138  addr:0x4b06d     ?SPI_OpenGlobal@CLmcDev@@QAEXXZ
+  ord: 139  addr:0x4b19b     ?SPI_SetWave@CLmcDev@@QAEXXZ
+  ord: 140  addr:0x68bec     ?ScanBmp@CLmcDev@@UAEHPAVCEntity@@NNPAVCMatrix2d@@@Z
+  ord: 141  addr:0x67a74     ?ScanBmpPtBuf@CLmcDev@@QAEHPAUBmpScanPt@@HHNNN@Z
+  ord: 142  addr:0x5463f     ?SetAnalog2@CLmcDev@@QAEHG@Z
+  ord: 143  addr:0x4c45a     ?SetAxisAccTime@CLmcDev@@QAEHH@Z
+  ord: 144  addr:0x578ca     ?SetBoardSNStr@CLmcDev@@QAEXVCString@@@Z
+  ord: 145  addr:0x4606e     ?SetCardNo@CLmcDev@@QAEXHH@Z
+  ord: 146  addr:0x5353d     ?SetCo2FPK@CLmcDev@@QAEHHNN@Z
+  ord: 147  addr:0x5048e     ?SetCurrent@CLmcDev@@QAEHN@Z
+  ord: 148  addr:0x3a70      ?SetDevState@CLmcDev@@QAEXGH@Z
+  ord: 149  addr:0x58577     ?SetDisableZ@CLmcDev@@QAEHXZ
+  ord: 150  addr:0x58531     ?SetEnableZ@CLmcDev@@QAEHXZ
+  ord: 151  addr:0x52a9b     ?SetFPK@CLmcDev@@QAEHHHNNHH@Z
+  ord: 152  addr:0x5319a     ?SetFlyRes@CLmcDev@@QAEHHNHHNHH@Z
+  ord: 153  addr:0x56bb0     ?SetFreqAnalogOutput@CLmcDev@@QAEHH@Z
+  ord: 154  addr:0x4dbab     ?SetJumpDelayTC@CLmcDev@@QAEXNN@Z
+  ord: 155  addr:0x3c90      ?SetMaxCurrent@CLmcDev@@QAEXN@Z
+  ord: 156  addr:0x3c40      ?SetMaxPowerRatio@CLmcDev@@QAEXN@Z
+  ord: 157  addr:0x3b20      ?SetOwen@CLmcDev@@QAEXPAVCWnd@@@Z
+  ord: 158  addr:0x56a2f     ?SetPowerAnalogOutput@CLmcDev@@QAEHN@Z
+  ord: 159  addr:0x54549     ?SetSPISimmerCurrent@CLmcDev@@QAEHN@Z
+  ord: 160  addr:0x585bd     ?SetZData@CLmcDev@@QAEHEEG@Z
+  ord: 161  addr:0x5a6f1     ?ShowMarkInfo@CLmcDev@@QAEXVCString@@@Z
+  ord: 162  addr:0x657d8     ?StandardMarkLine@CLmcDev@@QAEHAAV?$CArray@VPt2d@@AAV1@@@HNNH@Z
+  ord: 163  addr:0x4d162     ?StopExecute@CLmcDev@@QAEHXZ
+  ord: 164  addr:0x4ceba     ?UpdateCurAxisCoor@CLmcDev@@QAEXH@Z
+  ord: 165  addr:0x5abb1     ?VarTextElementConnectHostGetAnwser@CLmcDev@@QAEHPAVCEntSuperText@@@Z
+  ord: 166  addr:0x2ece2     ?WaitForAnswer@CQComByte@@QAEHXZ
+  ord: 167  addr:0x638b7     ?WaitForFinish@CLmcDev@@QAEHXZ
+  ord: 168  addr:0x5a756     ?WaitForMarkFinish@CLmcDev@@QAEHXZ
+  ord: 169  addr:0x631f9     ?WeldLine@CLmcDev@@QAEHAAV?$CArray@VPt2d@@AAV1@@@HNN@Z
+  ord: 170  addr:0x637e7     ?WeldPoint@CLmcDev@@QAEHAAV?$CArray@VPt2d@@AAV1@@@HNN@Z
+  ord: 171  addr:0x2e3b6     ?WriteCommBlock@CQComByte@@QAEHPAEK@Z
+  ord: 172  addr:0x51110     ?WritePort@CLmcDev@@QAEHG@Z
+  ord: 173  addr:0x57edc     ?ctrlGetRaycusState@@YAHPAVCLmcDev@@AAGAAH2@Z
+  ord: 174  addr:0x57e43     ?ctrlRaycusSetParam@@YAHPAVCLmcDev@@HHH@Z
+  ord: 175  addr:0x6a3b1     ?gf_CloseUsbMonitor@@YAXXZ
+  ord: 176  addr:0xca1c      ?gf_DlgInputPassword@@YAHAAVCString@@@Z
+  ord: 177  addr:0x331eb     ?gf_DlgSetCfg@@YAHHPAVCLmcDev@@AAULmcCfg@@PAVCWnd@@@Z
+  ord: 178  addr:0x3310f     ?gf_GetLmcCfgPath@@YA?AVCString@@XZ
+  ord: 179  addr:0x457fa     ?gf_GetLmcDev@@YAPAVCLmcDev@@XZ
+  ord: 180  addr:0x57f6e     ?gf_GetLmcDevState@@YA?AUtagResult@@PAVCLmcDev@@@Z
+  ord: 181  addr:0x335f0     ?gf_InitLmcCfg@@YAXAAULmcCfg@@@Z
+  ord: 182  addr:0x6a2f0     ?gf_InitUsbMonitor@@YAHPAVCWnd@@@Z
+  ord: 183  addr:0x3a26e     ?gf_ReadLmcCfg@@YAHAAULmcCfg@@VCString@@@Z
+  ord: 184  addr:0x4570e     ?gf_RestartMark@@YAXXZ
+  ord: 185  addr:0x34b98     ?gf_SaveLmcCfg@@YAHAAULmcCfg@@VCString@@@Z
+  ord: 186  addr:0x330c5     ?gf_SetLmcCfgPath@@YAXVCString@@@Z
+  ord: 187  addr:0x45804     ?gf_SetLmcDev@@YAPAVCLmcDev@@PAV1@@Z
+  ord: 188  addr:0x45701     ?gf_SetPauseFlag@@YAXH@Z
+  ord: 189  addr:0x33136     ?gf_StartMarkDlg@@YAHVCString@@0@Z
+  ord: 190  addr:0x6a3fb     ?gf_UsbMonitorGetNewDevice@@YAHXZ
+  ord: 191  addr:0x56d86     ?listChangeMarkCount@CLmcDev@@QAEHH@Z
+  ord: 192  addr:0x50d45     ?listDelayTime@CLmcDev@@QAEHH@Z
+  ord: 193  addr:0x50e8c     ?listDelayTimeUs@CLmcDev@@QAEHH@Z
+  ord: 194  addr:0x53419     ?listDirectLaserSwitch@CLmcDev@@QAEHH@Z
+  ord: 195  addr:0x5468a     ?listDirectMarkTo@CLmcDev@@QAEHNN@Z
+  ord: 196  addr:0x66937     ?listEnableWeldPowerWave@CLmcDev@@QAEHH@Z
+  ord: 197  addr:0x50fd5     ?listEndOfList@CLmcDev@@QAEHXZ
+  ord: 198  addr:0x51031     ?listFlyDelay@CLmcDev@@QAEHH@Z
+  ord: 199  addr:0x50ff7     ?listFlyEnable@CLmcDev@@QAEHH@Z
+  ord: 200  addr:0x64743     ?listFlyEncoderCount@CLmcDev@@QAEHHHHHH@Z
+  ord: 201  addr:0x56ca4     ?listIPGOpenMO@CLmcDev@@QAEHH@Z
+  ord: 202  addr:0x579bc     ?listIPGPulseWidthIndex@CLmcDev@@QAEHH@Z
+  ord: 203  addr:0x57592     ?listIPGSetConfigExtend@CLmcDev@@QAEHHH@Z
+  ord: 204  addr:0x57846     ?listIPGSetPrepump@CLmcDev@@QAEHH@Z
+  ord: 205  addr:0x5095c     ?listIPGYLPMPulseWidth@CLmcDev@@QAEHH@Z
+  ord: 206  addr:0x57785     ?listIPGYLPMPulseWidthPs@CLmcDev@@QAEHH@Z
+  ord: 207  addr:0x64e29     ?listJptSetParam@CLmcDev@@QAEHNHN@Z
+  ord: 208  addr:0x4f8b2     ?listJumpSpeed@CLmcDev@@QAEHN@Z
+  ord: 209  addr:0x4de7f     ?listJumpTo@CLmcDev@@QAEHNNH@Z
+  ord: 210  addr:0x57a99     ?listLaserExtOutput@CLmcDev@@QAEHH@Z
+  ord: 211  addr:0x50b31     ?listLaserOffDelay@CLmcDev@@QAEHH@Z
+  ord: 212  addr:0x50aa1     ?listLaserOnDelay@CLmcDev@@QAEHH@Z
+  ord: 213  addr:0x4f7d8     ?listLaserOnPoint@CLmcDev@@QAEHN@Z
+  ord: 214  addr:0x5058d     ?listMarkCurrent@CLmcDev@@QAEHN@Z
+  ord: 215  addr:0x50c50     ?listMarkEndDelay@CLmcDev@@QAEHH@Z
+  ord: 216  addr:0x4fb5e     ?listMarkFreq@CLmcDev@@QAEHH@Z
+  ord: 217  addr:0x500e6     ?listMarkPowerRatio@CLmcDev@@QAEHN@Z
+  ord: 218  addr:0x5079a     ?listMarkPulseWidth@CLmcDev@@QAEHN@Z
+  ord: 219  addr:0x4fa00     ?listMarkSpeed@CLmcDev@@QAEHN@Z
+  ord: 220  addr:0x4eba9     ?listMarkTo@CLmcDev@@QAEHNNH@Z
+  ord: 221  addr:0x50bc1     ?listPolygonDelay@CLmcDev@@QAEHH@Z
+  ord: 222  addr:0x52e97     ?listSetAnalogFPK@CLmcDev@@QAEHHHNNHH@Z
+  ord: 223  addr:0x64825     ?listSetDaZ@CLmcDev@@QAEHN@Z
+  ord: 224  addr:0x64c80     ?listSetDaZWord@CLmcDev@@QAEHG@Z
+  ord: 225  addr:0x53b63     ?listSetMarkParam@CLmcDev@@QAEHAAUMarkParam@@@Z
+  ord: 226  addr:0x6698e     ?listSetWeldPowerWave@CLmcDev@@QAEHHQAG0@Z
+  ord: 227  addr:0x570d7     ?listWaitForInput@CLmcDev@@QAEHGG@Z
+  ord: 228  addr:0x5106b     ?listWritrPort@CLmcDev@@QAEHG@Z
+  ord: 229  addr:0x45a9f     ?lmc_CloseDriver@@YAXXZ
+  ord: 230  addr:0x45832     ?lmc_GetValidDev@@YAHQAPAVCLmcDev@@AAH@Z
+  ord: 231  addr:0x45820     ?lmc_OpenDriver@@YAHH@Z
+  ord: 232  addr:0x56518     ?lsFlyWaitInput@CLmcDev@@QAEHHHH@Z
+
+============================================================
+IMPORT TABLE (DLL dependencies)
+============================================================
+  LMCMIO.dll (56 imports)
+    - ?MIO_OpenNewDev@@YAHXZ
+    - ?MIO_GetDevHandle@@YAPAXH@Z
+    - ?MIO_Close@@YAXH@Z
+    ... and 53 more
+  DataMgr.dll (72 imports)
+    - ??0CMakeClock@@QAE@H@Z
+    - ?GetType@CEntity@@QBEGXZ
+    - ?GetChildHead@CEntity@@QAEPAV1@XZ
+    ... and 69 more
+  QDib.dll (3 imports)
+    - ?GetWidth@CDIB@@QBEHXZ
+    - ?GetPixelGrayLever@CDIB@@QBEHABH0@Z
+    - ?GetHeight@CDIB@@QBEHXZ
+  mathlib.dll (34 imports)
+    - ??D@YA?AVPt2d@@ABV0@ABVCMatrix2d@@@Z
+    - ?Distance@Pt2d@@QBENABV1@@Z
+    - ??1CMatrix2d@@QAE@XZ
+    ... and 31 more
+  MFC42u.DLL (209 imports)
+    - ord(269)
+    - ord(826)
+    - ord(600)
+    ... and 206 more
+  MSVCRT.dll (31 imports)
+    - _wtoi
+    - wcsncpy
+    - wcscpy
+    ... and 28 more
+  KERNEL32.dll (25 imports)
+    - CreateFileW
+    - WaitCommEvent
+    - SetCommMask
+    ... and 22 more
+  USER32.dll (17 imports)
+    - UnregisterDeviceNotification
+    - LoadCursorW
+    - RegisterDeviceNotificationW
+    ... and 14 more
+
+============================================================
+CONCLUSION
+============================================================
+  Lmc1.dll HAS exported C functions.
+  Bridge can use: P/Invoke (C#) or LoadLibrary/GetProcAddress (C++)

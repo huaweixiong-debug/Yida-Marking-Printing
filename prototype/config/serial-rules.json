@@ -1,0 +1,26 @@
+{
+  "说明": "22位码生成规则。serialCodeBlock 加载此文件。",
+  "codeStructure": {
+    "totalLength": 22,
+    "segments": [
+      { "name": "barcodePrefix", "length": 9, "source": "model.barcodePrefix" },
+      { "name": "fixedCode", "length": 1, "source": "model.fixedCode" },
+      { "name": "productionDate", "length": 8, "source": "system.date.YYYYMMDD" },
+      { "name": "serialNo", "length": 4, "source": "counter.model+date.dailyIncrement" }
+    ]
+  },
+  "serialRules": {
+    "scope": "model_date",
+    "startValue": 1,
+    "maxValue": 9999,
+    "dailyReset": true,
+    "allowSkip": false,
+    "onOverflow": "alarm_and_stop"
+  },
+  "antiDuplicate": {
+    "uniqueConstraint": true,
+    "preAllocate": true,
+    "allowReuse": false,
+    "failedCodePolicy": "mark_invalid_no_reuse"
+  }
+}
