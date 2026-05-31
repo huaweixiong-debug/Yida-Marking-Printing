@@ -75,8 +75,8 @@ class App {
     // 6. 更新设备状态区初始值
     this._refreshUI();
 
-    // 预置一条 mock 报警，演示报警区
-    this.traceLog.addAlarm('INFO', '系统启动完成，所有设备处于 mock 模式。');
+    // 预置一条启动提示，明确当前激光方案
+    this.traceLog.addAlarm('INFO', '系统启动完成。当前激光方案为 PLC IO 触发 + TXT 文件交接。');
 
     window.__app = this;  // 开发调试用，暴露 app 实例
     console.log('[app] 三码合一预览原型已启动 (全部 mock)');
@@ -312,7 +312,7 @@ class App {
               <div class="maint-card-body">
                 内容: QR(22位码) + 右侧三行文字<br>
                 字段: code22, customerPartNo, supplierCode, dateSerial<br>
-                设备: laserEzcadAdapter → Lmc1.dll
+                输出: laserEzcadAdapter → TXT 文件 → PLC IO 触发激光电脑
               </div>
             </div>
             <div class="maint-card">
@@ -328,7 +328,7 @@ class App {
               <div class="maint-card-body">
                 内容: 供应商代码 + 客户件号 + 生产批次号<br>
                 字段: supplierCode, customerPartNo, productionBatchNo<br>
-                设备: laserEzcadAdapter → Lmc1.dll
+                输出: laserEzcadAdapter → TXT 文件 → PLC IO 触发激光电脑
               </div>
             </div>
           </div>
@@ -449,6 +449,7 @@ class App {
 
           // 构建变量（ZPL 从配置读取模板）
           const vars = this._bd.getTemplateVars();
+          vars.modelName = model.name;
           vars.zpl = this._buildZpl(this._bd.code22);
 
           // 执行
@@ -487,6 +488,7 @@ class App {
         if (!st.canReprint) { this._st1Log('当前无可重新执行的记录。'); return; }
         try {
           const vars = this._bd ? this._bd.getTemplateVars() : {};
+          if (this._bd) vars.modelName = this._bd.modelName;
           vars.zpl = this._bd ? this._buildZpl(this._bd.code22) : '';
           await this.station1.reprint(this.deviceAdapter.laser, this.deviceAdapter.printer, vars);
           this._st1Log(this._t('station1.logReprintDone', { code22: this._bd ? this._bd.code22 : '-' }));

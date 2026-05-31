@@ -1,48 +1,43 @@
 {
-  "说明": "界面文案配置。所有按钮、标题、提示文案集中管理，不散落在 JS 中。",
-
+  "说明": "界面文案配置。当前激光方案为 PLC IO 触发 + TXT 文件交接。",
   "tabLabels": {
-    "station1": "工位一 · 激光打码+标签",
-    "station2": "工位二 · 扫码核验",
+    "station1": "工位一 - 激光打码+标签",
+    "station2": "工位二 - 扫码校验",
     "maintenance": "维护配置",
     "logs": "日志与追溯"
   },
-
   "station1": {
-    "sectionDebug": "调试模式（Lmc1.dll 红光定位）",
-    "sectionAuto": "自动模式 — 选择业务",
+    "sectionDebug": "调试模式（PLC/IO 方案说明）",
+    "sectionAuto": "自动模式 - 选择业务",
     "btnStartDebug": "开始调试",
     "btnContinueDebug": "继续调试",
     "btnEndDebug": "调试完毕",
     "btnExecute": "生成码并执行",
     "btnReprint": "重新执行",
-    "logDebugEnter": "进入调试模式，Lmc1.dll 红光定位中…",
-    "logDebugContinue": "继续调试，刷新红光定位…",
-    "logDebugEnd": "调试完毕，已进入自动模式。请选择业务后生成码并执行。",
+    "logDebugEnter": "当前激光方案由 PLC IO 触发，软件侧不执行红光定位。",
+    "logDebugContinue": "仍为 PLC IO 方案，无红光定位动作，继续保持参数确认。",
+    "logDebugEnd": "调试说明确认完毕，已进入自动模式。后续执行将导出激光 TXT 文件。",
     "logCodeGenerated": "22位码已生成: {code22}",
-    "logExecuteDone": "执行完成 [{mode}]: 码 {code22}",
+    "logExecuteDone": "执行完成 [{mode}]：码 {code22}",
     "logReprintDone": "重新执行: {code22}"
   },
-
   "station2": {
-    "sectionDebug": "调试模式（Lmc1.dll 红光定位）",
+    "sectionDebug": "调试模式（PLC/IO 方案说明）",
     "sectionPermanentPreview": "永久性标识内容预览",
-    "sectionAuto": "自动模式 — 扫码触发打码",
+    "sectionAuto": "自动模式 - 扫码触发打码内容导出",
     "btnStartDebug": "开始调试",
     "btnContinueDebug": "继续调试",
     "btnEndDebug": "调试完毕",
     "btnSimScan": "模拟扫码",
     "btnReset": "完成/重置",
-    "logDebugEnter": "进入调试模式，Lmc1.dll 红光定位中…",
-    "logDebugEnd": "调试完毕，已进入自动模式。请扫码以识别型号。",
+    "logDebugEnter": "当前激光方案由 PLC IO 触发，软件侧不执行红光定位。",
+    "logDebugEnd": "调试说明确认完毕，已进入自动模式。二次扫码后将导出永久标识 TXT 文件。",
     "logReset": "已重置，准备下一件。"
   },
-
   "zplTemplate": {
     "default": "^XA^FO14,18^BQN,2,3^FDLA,{code22}^FS^XZ",
-    "说明": "ZPL 模板。{code22} 会被替换为实际 22 位码。后续按实际标签尺寸调整坐标和字体。"
+    "说明": "ZPL 模板。{code22} 会被替换为实际 22 位码。"
   },
-
   "deviceStatus": {
     "laserLabel": "激光打码",
     "printerLabel": "标签打印机",
@@ -50,20 +45,18 @@
     "modeMock": "mock 模式",
     "modeReal": "真实模式"
   },
-
   "footer": {
-    "line1": "激光: mock | 打印机: mock | 扫码枪: mock",
-    "line2": "laserEzcadAdapter 已预留 32位 Lmc1.dll 桥接接口",
+    "line1": "激光: txt-file | 打印机: mock | 扫码枪: mock",
+    "line2": "激光输出为 TXT 文件，由 PLC IO 触发装有驱动卡的电脑执行",
     "line3": "数据无持久化（刷新即清空）"
   },
-
   "sectionLabels": {
-    "uiTop": "顶部信息区 ← modelConfigBlock",
-    "uiAction": "中部操作区 ← stationBlock",
-    "uiPreview": "模板预览区 ← templateConfigBlock",
-    "uiCode": "码信息区 ← serialCodeBlock",
-    "uiDevice": "设备状态区 ← deviceAdapterBlock",
-    "uiTable": "最近生产记录 ← traceLogBlock",
-    "uiAlarms": "报警信息 ← traceLogBlock"
+    "uiTop": "顶部信息区 -> modelConfigBlock",
+    "uiAction": "中部操作区 -> stationBlock",
+    "uiPreview": "模板预览区 -> templateConfigBlock",
+    "uiCode": "码信息区 -> serialCodeBlock",
+    "uiDevice": "设备状态区 -> deviceAdapterBlock",
+    "uiTable": "最近生产记录 -> traceLogBlock",
+    "uiAlarms": "报警信息 -> traceLogBlock"
   }
 }

@@ -114,7 +114,13 @@ export class Station1PrintBlock {
       // 激光下发
       if (Station1PrintBlock.needsLaser(mode) && laserAdapter) {
         laserAdapter.setVariables(variables);
-        results.laser = await laserAdapter.startMark();
+        results.laser = await laserAdapter.startMark({
+          code22: variables.code22 || '',
+          modelName: variables.modelName || '',
+          businessMode: mode,
+          markType: 'station1',
+          templateName: 'qr_or_sync',
+        });
         if (!results.laser.ok) errors.push('激光: ' + (results.laser.message || '失败'));
       }
 
@@ -148,7 +154,13 @@ export class Station1PrintBlock {
     if (Station1PrintBlock.needsLaser(mode) && laserAdapter) {
       laserAdapter.clearVariables();
       laserAdapter.assignVariables(variables);
-      results.laser = await laserAdapter.startMark();
+      results.laser = await laserAdapter.startMark({
+        code22: variables.code22 || '',
+        modelName: variables.modelName || '',
+        businessMode: mode,
+        markType: 'station1_reprint',
+        templateName: 'qr_or_sync',
+      });
     }
     if (Station1PrintBlock.needsPrinter(mode) && printerAdapter) {
       const zpl = variables.zpl || `^XA^FO14,18^BQN,2,3^FDLA,${variables.code22}^FS^XZ`;

@@ -17,7 +17,9 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "allow_reprint_current_only": True,
     },
     "printer": {
+        "note": "打印机配置。远程电脑已通过 USB 连接 Zebra 打印机。wmic printer get Name,PortName 可查看端口号。",
         "mode": "file",
+        "portName": "",
         "output_dir": "output/labels",
         "tcp_host": "192.168.1.50",
         "tcp_port": 9100,
@@ -27,14 +29,85 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "label_height_mm": 20,
     },
     "laser": {
-        "mode": "file",
-        "output_dir": "output/laser",
-        "tcp_host": "192.168.1.60",
-        "tcp_port": 5000,
-        "raw_command_template": "{code22}",
+        "mode": "txt-file",
+        "workflow": "PLC_IO_TXT",
+        "note": "软件侧只导出打码内容 TXT，由 PLC IO 点触发激光电脑执行。",
+        "output": {
+            "dir": "output/laser",
+            "filePrefix": "laser_mark",
+            "station1Prefix": "s1",
+            "station2Prefix": "s2",
+        },
+        "template": {
+            "header": [
+                "# 三码合一激光打码交接文件",
+                "generatedAt={generatedAt}",
+                "mode={mode}",
+                "workflow={workflow}",
+                "code22={code22}",
+                "modelName={modelName}",
+                "businessMode={businessMode}",
+                "markType={markType}",
+                "template={template}",
+            ],
+            "variableLine": "{key}={value}",
+            "footer": [
+                "[notes]",
+                "说明=由 PLC IO 点触发激光电脑执行，本文件仅提供打码内容",
+                "建议目录={outputDir}",
+            ],
+        },
+        "legacy": {
+            "tcp_host": "192.168.1.60",
+            "tcp_port": 5000,
+        },
     },
     "scanner": {
-        "required_for_verify": False,
+        "note": "扫码枪接入配置。已确认 COM3。当前仅自检配置，尚未接入业务扫码路径。",
+        "mode": "serial",
+        "serial": {
+            "port": "COM3",
+            "baudRate": 9600,
+            "dataBits": 8,
+            "parity": "N",
+            "stopBits": 1,
+        },
+        "required_for_verify": True,
+    },
+    "plc": {
+        "note": "PLC IO 点位定义。网线尚未插，当前仅配置占位，未完成联机验证。",
+        "ip": "192.168.2.1",
+        "connected": False,
+        "points": {
+            "M0_0": {
+                "label": "工位一型号已选择",
+                "direction": "PC->PLC",
+                "description": "型号选择完成后置位，通知 PLC 可以开始打码流程",
+            },
+            "M0_1": {
+                "label": "工位二扫码对比 OK",
+                "direction": "PC->PLC",
+                "description": "扫码校验通过后置位",
+            },
+            "M0_2": {
+                "label": "工位二扫码对比 NG",
+                "direction": "PC->PLC",
+                "description": "扫码校验失败后置位",
+            },
+            "M0_3": {
+                "label": "工位一打印/输出打码内容",
+                "direction": "PLC->PC",
+                "description": "PLC 触发 PC 执行打印标签或输出激光打码 TXT",
+            },
+        },
+    },
+    "deployment": {
+        "note": "远程部署参数",
+        "localMirrorPath": "P:\\三码合一程序",
+        "remotePath": "D:\\三码合一程序",
+        "remoteIP": "192.168.2.99",
+        "tailscaleIP": "100.118.225.86",
+        "tailscaleSSH": "a@100.118.225.86",
     },
 }
 

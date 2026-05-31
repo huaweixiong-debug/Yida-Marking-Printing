@@ -114,7 +114,14 @@ export class Station2MarkBlock {
       let markResult;
       if (laserAdapter) {
         laserAdapter.setVariables(variables);
-        markResult = await laserAdapter.startMark();
+        markResult = await laserAdapter.startMark({
+          code22,
+          modelName: matchedRecord?.modelName || modelConfig?.name || '',
+          businessMode: 'PERMANENT_MARK',
+          markType: 'permanent_mark',
+          templateName: 'permanent_text',
+          permanentText: `ID: ${variables.supplierCode} ${variables.customerPartNo} ${variables.productionBatchNo}`,
+        });
       } else {
         markResult = { ok: true, message: '永久性标识已打码（mock）', elapsedMs: 500 };
       }

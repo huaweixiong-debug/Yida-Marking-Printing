@@ -180,7 +180,7 @@ export class UiMapper {
           html += `<span class="zone-tag permanent-zone">${z.label} [${z.type}]</span>`;
         });
         html += `</div></div>`;
-        html += `<div class="perm-note">由 Lmc1.dll 驱动执行 → laserEzcadAdapter</div>`;
+        html += `<div class="perm-note">当前方案：导出 TXT 文件 → PLC IO 触发激光电脑执行</div>`;
       }
     }
 

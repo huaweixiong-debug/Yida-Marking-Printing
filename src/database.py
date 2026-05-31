@@ -39,6 +39,9 @@ class Database:
                 CREATE TABLE IF NOT EXISTS product_model (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL UNIQUE,
+                    customer_part_no TEXT NOT NULL DEFAULT '',
+                    supplier_code TEXT NOT NULL DEFAULT '104107',
+                    production_batch_no TEXT NOT NULL DEFAULT '',
                     barcode_prefix TEXT NOT NULL,
                     fixed_code TEXT NOT NULL,
                     label_template TEXT NOT NULL DEFAULT 'default',
@@ -119,13 +122,31 @@ class Database:
                     ON alarm_log(occurred_at);
                 """
             )
+            self._ensure_product_model_columns()
             self.conn.commit()
+
+    def _ensure_product_model_columns(self) -> None:
+        existing = {
+            row["name"]
+            for row in self.conn.execute("PRAGMA table_info(product_model)").fetchall()
+        }
+        additions = [
+            ("customer_part_no", "TEXT NOT NULL DEFAULT ''"),
+            ("supplier_code", "TEXT NOT NULL DEFAULT '104107'"),
+            ("production_batch_no", "TEXT NOT NULL DEFAULT ''"),
+        ]
+        for name, ddl in additions:
+            if name not in existing:
+                self.conn.execute(f"ALTER TABLE product_model ADD COLUMN {name} {ddl}")
 
     def seed_defaults(self) -> None:
         if self.list_models(include_disabled=True):
             return
         self.add_model(
             name="示例型号",
+            customer_part_no="YZ167182100263/1",
+            supplier_code="104107",
+            production_batch_no="260312",
             barcode_prefix="123456789",
             fixed_code="A",
             remark="首次运行自动创建，可修改或停用。",
@@ -156,6 +177,9 @@ class Database:
     def add_model(
         self,
         name: str,
+        customer_part_no: str,
+        supplier_code: str,
+        production_batch_no: str,
         barcode_prefix: str,
         fixed_code: str,
         remark: str = "",
@@ -170,10 +194,21 @@ class Database:
             cur = self.conn.execute(
                 """
                 INSERT INTO product_model
-                    (name, barcode_prefix, fixed_code, remark, created_at, updated_at)
-                VALUES (?, ?, ?, ?, ?, ?)
+                    (name, customer_part_no, supplier_code, production_batch_no,
+                     barcode_prefix, fixed_code, remark, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
-                (model_name, prefix, fixed, remark.strip(), ts, ts),
+                (
+                    model_name,
+                    customer_part_no.strip(),
+                    supplier_code.strip() or "104107",
+                    production_batch_no.strip(),
+                    prefix,
+                    fixed,
+                    remark.strip(),
+                    ts,
+                    ts,
+                ),
             )
             self.conn.commit()
             return int(cur.lastrowid)
@@ -182,6 +217,9 @@ class Database:
         self,
         model_id: int,
         name: str,
+        customer_part_no: str,
+        supplier_code: str,
+        production_batch_no: str,
         barcode_prefix: str,
         fixed_code: str,
         remark: str,
@@ -196,11 +234,22 @@ class Database:
             self.conn.execute(
                 """
                 UPDATE product_model
-                SET name = ?, barcode_prefix = ?, fixed_code = ?, remark = ?,
-                    enabled = ?, updated_at = ?
+                SET name = ?, customer_part_no = ?, supplier_code = ?, production_batch_no = ?,
+                    barcode_prefix = ?, fixed_code = ?, remark = ?, enabled = ?, updated_at = ?
                 WHERE id = ?
                 """,
-                (model_name, prefix, fixed, remark.strip(), 1 if enabled else 0, now_text(), model_id),
+                (
+                    model_name,
+                    customer_part_no.strip(),
+                    supplier_code.strip() or "104107",
+                    production_batch_no.strip(),
+                    prefix,
+                    fixed,
+                    remark.strip(),
+                    1 if enabled else 0,
+                    now_text(),
+                    model_id,
+                ),
             )
             self.conn.commit()
 

@@ -13,3 +13,5 @@ Desktop.ini
 __pycache__/
 *.pyc
 tools/py32/
+output/labels/*.zpl
+output/laser/*.txt

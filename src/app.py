@@ -471,7 +471,26 @@ class SanmaApp:
     def _run_production_flow(self, record: dict[str, Any]) -> None:
         operator = record["operator"]
         try:
-            laser_result = self.laser.mark(record["code22"], record["model_name"])
+            model = next((m for m in self.models if int(m["id"]) == record.get("model_id")), {})
+            production_date = str(record.get("production_date", ""))
+            serial_no = int(record.get("serial_no", 0))
+            date_serial = f"{production_date}{serial_no:04d}" if production_date else f"{serial_no:04d}"
+            laser_result = self.laser.mark(
+                record["code22"],
+                model_name=record["model_name"],
+                business_mode="LASER_QR_LABEL_SYNC",
+                mark_type="station1",
+                template_name="qr_or_sync",
+                variables={
+                    "code22": record["code22"],
+                    "modelName": record["model_name"],
+                    "barcodePrefix": model.get("barcode_prefix", ""),
+                    "fixedCode": model.get("fixed_code", ""),
+                    "productionDate": production_date,
+                    "serialNo": f"{serial_no:04d}",
+                    "dateSerial": date_serial,
+                },
+            )
             self._log_device_result(laser_result)
             if not laser_result.ok:
                 raise RuntimeError(f"激光下发失败: {laser_result.error}")

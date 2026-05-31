@@ -23,11 +23,17 @@ def init_database() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="重汽三码合一程序")
-    parser.add_argument("--init-db", action="store_true", help="Only initialize database and exit.")
+    parser.add_argument("--init-db", action="store_true", help="初始化数据库并退出")
+    parser.add_argument("--selfcheck", action="store_true", help="运行联机前自检并退出")
     args = parser.parse_args()
 
     if args.init_db:
         init_database()
+        return
+
+    if args.selfcheck:
+        from selfcheck import main as run_selfcheck
+        run_selfcheck()
         return
 
     app = SanmaApp(project_root())
